@@ -1,0 +1,9 @@
+[
+    {
+        "left": "bb.service",
+        "right": "workflow",
+        "type": "has_one",
+        "drops": true,
+        "hal": true
+    }
+]

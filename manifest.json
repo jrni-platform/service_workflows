@@ -1,0 +1,22 @@
+{
+  "bbAppManifestVersion":"1.0",
+  "name": "Service Workflow Example Application",
+  "unique_name": "service_workflows",
+  "version": "0.1",
+  "description": "Example app that adds service workflows, editable in Studio",
+  "author": "BookingBug",
+  "licence": "MIT",
+  "tags": "service pools",
+  "config": false,
+  "panels": [ 
+    "workflow_panel" 
+  ],
+  "objects": [  
+     "workflow",
+     "bb.service"
+  ],
+  "script_packs": [
+  ],
+  "liquid": [
+  ]
+}

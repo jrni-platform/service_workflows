@@ -1,0 +1,46 @@
+<div class="table-responsive workflow_picker-container">
+  <div class="workflow_picker-header">
+    <p>Select the Workflow to assign to this service</p>
+    <input
+      type="text"
+      name="tableSearch"
+      class="form-control"
+      placeholder="Search"
+      ng-model="$ctrl.search"
+    />
+  </div>
+  <table class="table table-bordered table-hover table-striped">
+    <tbody>
+      <tr>
+        <th id="toggle-control-heading">
+          Use?
+        </th>
+        <th>Name</th>
+        <th>Workflow</th>
+      </tr>
+      <tr
+        ng-repeat="workflow in $ctrl.workflows"
+        ng-if="!$ctrl.search || ($ctrl.search && $ctrl.matchesFilter(workflow.name))">
+        <td class="check-items">
+          <input type="radio" name="workflow" ng-value="workflow.id" ng-model="$ctrl.workflow">
+        </td>
+        <td>
+          <span>{{workflow.name}}</span>
+        </td>
+        <td>
+          <span>{{workflow.flows.join(",&nbsp;")}}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="workflow_picker-footer">
+    <div aria-live="polite">
+      <p ng-if="$ctrl.showSuccessMessage">Updated successfully</p>
+    </div>
+    <button
+      type="button"
+      class="btn btn-primary pull-right"
+      ng-click="$ctrl.save()">Save
+    </button>
+  </div>
+</div>
